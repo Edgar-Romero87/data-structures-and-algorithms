@@ -10,19 +10,19 @@ Write a function named templateWithJQuery that uses jQuery to get the html templ
 ------------------------------------------------------------------------------------------------ */
 let starWarsPeople = [
   {
-    "name": "Luke Skywalker",
-    "height": "172",
-    "eye_color": "blue"
+    'name': 'Luke Skywalker',
+    'height': '172',
+    'eye_color': 'blue'
   },
   {
-    "name": "C-3PO",
-    "height": "167",
-    "eye_color": "yellow"
+    'name': 'C-3PO',
+    'height': '167',
+    'eye_color': 'yellow'
   },
   {
-    "name": "R2-D2",
-    "height": "96",
-    "eye_color": "red"
+    'name': 'R2-D2',
+    'height': '96',
+    'eye_color': 'red'
   }
 ];
 
@@ -186,13 +186,14 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // recipe.ingredients.forEach(str => {
-  //   str = str.split();
-  // })
+  // eslint-disable-next-line no-unused-vars
+  recipe.ingredients.forEach(str => {
+    str = str.split();
+  })
   return result;
 };
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
@@ -208,7 +209,7 @@ Write a function named stepAction that takes in the recipe and extracts the acti
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
-const stepActions = (recipe) => {
+const stepActions = () => {
   let result = [];
   // Solution code here...
   return result;
@@ -227,15 +228,22 @@ For example:
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
 
+// const removeEvenValues = (arr) => {
+//   for (let i=0; i < arr.length; i++){
+//     if (arr[i]%2 ===0){
+//       arr.splice(i--,1)
+//     }
+//   }
+//   return arr;
+// }
 const removeEvenValues = (arr) => {
-  for (let i=0; i < arr.length; i++){
-    if (arr[i]%2 ===0){
-      arr.splice(i--,i)
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]%2===0){
+      arr.splice(i--,1)
     }
   }
   return arr;
 }
-
 
 describe('Testing challenge 7', () => {
   test('It should remove the even numbers from the array', () => {
@@ -366,12 +374,6 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-
-
-
-
-
-
 describe('Testing challenge 11', () => {
   test('It should return the string without vowels', () => {
     expect(extractVowels('gregor')).toStrictEqual(['grgr', 'eo']);
@@ -383,4 +385,6 @@ describe('Testing challenge 11', () => {
 
 function createSnippetWithJQuery(html){
   return cheerio.load(html);
-};
+}
+
+
