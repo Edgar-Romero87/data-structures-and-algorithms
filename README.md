@@ -3,6 +3,8 @@
 
 # 401 
 
-* [arrayReverse](code-challenges/array-reverse.js)
+* [Code Challenge 1-arrayReverse](code-challenges/array-reverse.js)
 
-* [arrayShift](code-challenges/arrayShift/shift.js)
+* [Code Challenge 2-arrayShift](code-challenges/arrayShift/shift.js)
+
+* [Code Challenge 3-arrayBinarySearch](arrayBinarySearch/array-binary-search.js)
