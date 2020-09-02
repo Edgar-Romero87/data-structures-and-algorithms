@@ -45,18 +45,13 @@ class LinkedList {
   }
 
   toString() {
+    let stringToReturn = '';
     let current = this.head;
-    let string = '';
     while (current) {
-      if (current !== null) {
-        string = `${string} { ${current.value} } ->`;
-        current = current.next;
-      }
-      if (current === null) {
-        string = `${string} ${null}`;
-      }
+      stringToReturn += '{ ' + current.value + ' } -> '
+      current = current.next
     }
-    console.log(string);
+    return stringToReturn + 'NULL';
   }
 
   insertBefore(value, newVal) {
