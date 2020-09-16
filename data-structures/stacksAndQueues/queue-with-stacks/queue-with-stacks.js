@@ -1,6 +1,6 @@
 'use strict'
 
-const Stack = require('./stack.js');
+const Stack = require('./stacks');
 
 class PseudoQueue{
   constructor(){
