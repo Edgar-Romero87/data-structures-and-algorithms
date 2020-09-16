@@ -22,67 +22,68 @@ class Stack {
   }
 
   pop(){
-    if(this.isEmpty()){
-      throw "stack is empty";
-    }
-    let take = this.top.value;
+    if(this.top === null) throw new Error ('STACK IS EMPTY');
+
+    let take = this.top;
     this.top = this.top.next;
-    return take;
+    return take.value;
   }
-
+  //it looks at the top of the stack, without removing it from the stack.
   peek(){
-    if(this.isEmpty()){
-      throw "stack is empty";
-    }
-    return this.top.value
+    if(this.top === null) throw new Error ('STACK IS EMPTY');
+
+    return this.top
   }
 
+  //returns a boolean indicating whether or not the stack is empty.
   isEmpty() {
     if (this.top){
-      console.log('true');
+      console.log('STACK IS EMPTY');
       return true;
     } else if(!this.top){
-      console.log('false');
-      return true;
+      console.log('STACK IS NOT EMPTY');
+      return false;
     }
   }
 }
+
 
 
 class Queue{
   constructor(){
     this.front = null;
-    this.back - null;
+    this.back = null;
+    this.queue = [];
   }
   enqueue(value){
     let node = new Node(value);
-    this.back.next = node;
-    this.back = node;
-    return this.back;
-  }
-
-  dequeue(){ 
-    if (!this.isEmpty()){
-      let temp = this.front;
-      this.front = this.front.next;
-      temp.next = null;
-      return temp.value;
-    
+    if (this.front === null){
+      this.front = this.rear 
+      this.rear = node;
     } else {
-      return {};
+      this.rear.next = node;
+      this.rear = node;
     }
+  }
+  dequeue(){
+    if(this.front ===null) {
+      throw new Error('Nothing to dequeue');
+    }
+    return this.queue.shift();
 
   }
 
   peek(){
     if (!this.front){
-      return {};
-    } else if (this,front){
+      return 'nothing to peek';
+    } else if(this.front){
       console.log(this.front .value);
       return this.front.value;
     }
   }
-
-
-
+  isEmpty(){
+    return this.front === null;
+  }
 }
+
+module.exports = { Stack, Queue };
