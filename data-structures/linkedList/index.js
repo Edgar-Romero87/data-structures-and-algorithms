@@ -1,6 +1,6 @@
 'use strict';
 
-const LL = require('./linkedList/linked_list');
+const LL = require('./linked_list');
 let list = new LL();
 // let listResults =
 
