@@ -18,3 +18,7 @@
 * [Queue with stacks](data-structures/queue-with-stacks/README.md)
 
 * [Fifo animal shelter](data-structures/fif-animal-shelter/README.md)
+
+# Binary Tree
+
+* [Tree](data-structures/tree/README.md)
