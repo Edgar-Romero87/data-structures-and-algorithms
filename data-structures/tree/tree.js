@@ -74,12 +74,18 @@ class BinaryTree {
 
 }
 
-const applesNode = new Node('apples', new Node('bananas'), new Node('pears'),);
+//let thirty = new BinarySearchTree(30);
+let applesNode = new Node('apples');
+let bananas = new Node('bananas');
+let pears =  new Node('pears');
+
 
 const tree = new BinaryTree(applesNode);
 
-const results = tree.preOrder();
-// const results = tree.inOrder();
+console.log(tree.preOrder());
+console.log(tree.inOrder());
+console.log(tree.postOrder());
+
 // const results = tree.postOrder();
 
 // Create a BinarySearchTree class
@@ -88,29 +94,48 @@ const results = tree.preOrder();
 // define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 class BinarySearchTree extends BinaryTree {
-  
+  // add(value) {
+  //   const output = [];
+
+  //   let newNode = new Node(value);
+  //   while (this.left || this.right){
+  //     if (this.root === null) {
+  //       this.root = newNode;
+  //     }
+  //     if (newNode.value < this.root) {
+  //       this.root = this.root.left;
+  //     }
+  //     if (newNode.value > this.root) {
+  //       this.root = this.root.right;
+  //     }
+  //   }
+  //   output.push(newNode);
+  //   return output;
+  // }
   add(value) {
-    const output = [];
-    //accepts a value, and adds a new node with that value in the correct location in the binary search tree.
-    let newNode = new Node(value);
-    while(this.left || this.right) {
-      if( this.left === null) {
-        this.root = newNode;
+    // make a new node
+    // traverse and put node in the right spot
+    const newNode = new Node(value);
+    const _walk = (node) => {
+      if(value < node.value) {
+        if(!node.left) {
+          node.left = newNode;
+          return newNode;
+        }
+        _walk(node.left);
       }
-      if( newNode.value < this.root) {
-        this.root = this.root.left;
+      if(value > node.value) {
+        if(!node.right) {
+          node.right = newNode;
+          return newNode;
+        }
+        _walk(node.right);
       }
-      if(newNode.value > this.root) {
-        this.root = this.root.right;
-      }
-    }
-    output.push(newNode);
-    return output; 
+    };
+    _walk(this.root);
   }
 
-
   contains(value) {
-
     while(this.root) {
       if(this.root === value)
         return true;
@@ -127,6 +152,8 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
+
+
 //contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
-module.exports = { BinarySearchTree, Node };
+module.exports = { BinaryTree, BinarySearchTree, Node };

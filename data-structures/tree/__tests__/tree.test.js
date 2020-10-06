@@ -48,7 +48,7 @@ describe('Binary tree tests', () => {
     const apples = new Node('apples', banana, pear);
     const tree = new BinarySearchTree(apples);
 
-    expect(tree.inOrder()).toEqual(['banana','pear', 'apples']);
+    expect(tree.inOrder()).toBe(['banana','pear', 'apples']);
 
   })
 
@@ -59,7 +59,7 @@ describe('Binary tree tests', () => {
     const apples = new Node('apples', banana, pear);
     const tree = new BinarySearchTree(apples);
 
-    expect(tree.postOrder()).toEqual(['banana', 'pear', 'apples']);
-  })
+    expect(tree.postOrder()).toEqual(['banana', 'pear', 'apples'])
+  });
 
 });
