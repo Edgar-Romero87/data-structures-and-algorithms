@@ -1,5 +1,7 @@
 'use strict';
 
+const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues.js');
+
 const output = [];
 
 class Node {
@@ -80,33 +82,29 @@ class BinaryTree {
     return current.value;
   }
 
+  breadthFirst(tree){
+    let breadth = new Queue();
+    let array = [];
+
+    breadth.enqueue(tree.root);
+
+    while(breadth.queue.length){
+      let front = breadth.dequeue()
+      array.push(front.value)
+      if(front.left){
+        breadth.enqueue(front.left)
+      }
+      if(front.right){
+        breadth.enqueue(front.right)
+      }
+    }
+    return array;
+  }
+
+
 }
 
-let twenty = new Node(20);
-let twelve = new Node(12);
-let six = new Node(6);
-let seventeen = new Node(17);
-let thirtytwo = new Node(32);
-let twentyfive = new Node(25);
-let fourty = new Node(40);
-let seventy = new Node(70);
 
-twenty.left = twelve;
-twenty.right = thirtytwo;
-twelve.left = six;
-twelve.right = seventeen;
-thirtytwo.right = fourty;
-thirtytwo.left = twentyfive;
-fourty.right = seventy;
-
-let tree = new BinaryTree(twenty);
-// For a bst ...
-// tree.add(20);
-// tree.add(12);
-
-console.log(tree.preOrder());
-console.log(tree.inOrder());
-console.log(tree.postOrder());
 
 // define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 // define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
