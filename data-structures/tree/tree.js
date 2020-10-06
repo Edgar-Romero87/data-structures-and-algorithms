@@ -1,7 +1,7 @@
 'use strict';
 
-const output = [];
 
+const output = [];
 class Node {
   constructor(value, left=null, right=null){
     this.value = value;
@@ -44,7 +44,7 @@ class BinaryTree {
         return;
       }
       _inOrder(root.left);
-      output.push(root.vale);
+      output.push(root.value);
 
       _inOrder(root.right);
     }
@@ -73,20 +73,6 @@ class BinaryTree {
   }
 
 }
-
-//let thirty = new BinarySearchTree(30);
-let applesNode = new Node('apples');
-let bananas = new Node('bananas');
-let pears =  new Node('pears');
-
-
-const tree = new BinaryTree(applesNode);
-
-console.log(tree.preOrder());
-console.log(tree.inOrder());
-console.log(tree.postOrder());
-
-// const results = tree.postOrder();
 
 // Create a BinarySearchTree class
 
