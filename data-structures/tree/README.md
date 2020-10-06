@@ -29,3 +29,20 @@ Big O of time is O(h) or (height) because in the worst case, er have to search a
 - postOrder returns an array of the values ordered left, right, root.
 - Add: accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 - Contains: accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+
+
+## Find Maximum Value 
+Write an instance method called `find-maximum-value.` Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+### API
+find-maximum-value: returns the maximum value within the tree.
+
+![Find Maximum Whiteboard](whiteboard/Find-Max.png)
+
+
+
+
+# Breadth First Traversal Method
+
+![Breadth first](whiteboard/Breadth-First.png)

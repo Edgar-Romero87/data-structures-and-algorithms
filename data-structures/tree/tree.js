@@ -72,23 +72,41 @@ class BinaryTree {
     return output;
   }
 
+  findMaxValue(){
+    let current = this.root;
+    while(current.right !== null){
+      current = current.right
+    }
+    return current.value;
+  }
+
 }
 
-//let thirty = new BinarySearchTree(30);
-let applesNode = new Node('apples');
-let bananas = new Node('bananas');
-let pears =  new Node('pears');
+let twenty = new Node(20);
+let twelve = new Node(12);
+let six = new Node(6);
+let seventeen = new Node(17);
+let thirtytwo = new Node(32);
+let twentyfive = new Node(25);
+let fourty = new Node(40);
+let seventy = new Node(70);
 
+twenty.left = twelve;
+twenty.right = thirtytwo;
+twelve.left = six;
+twelve.right = seventeen;
+thirtytwo.right = fourty;
+thirtytwo.left = twentyfive;
+fourty.right = seventy;
 
-const tree = new BinaryTree(applesNode);
+let tree = new BinaryTree(twenty);
+// For a bst ...
+// tree.add(20);
+// tree.add(12);
 
 console.log(tree.preOrder());
 console.log(tree.inOrder());
 console.log(tree.postOrder());
-
-// const results = tree.postOrder();
-
-// Create a BinarySearchTree class
 
 // define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 // define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
@@ -151,6 +169,7 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 }
+
 
 
 

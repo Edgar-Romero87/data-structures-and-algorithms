@@ -1,6 +1,6 @@
 'use strict';
 
-const { BinarySearchTree, Node } = require('../tree');
+const { BinaryTree, BinarySearchTree, Node } = require('../tree');
 
 /*
 Can successfully instantiate an empty tree
@@ -63,3 +63,29 @@ describe('Binary tree tests', () => {
   });
 
 });
+
+describe('MAximum value finder', () => {
+  it('Can successfully find the highest value on a tree', () => {
+    let twenty = new Node(20);
+    let twelve = new Node(12);
+    let six = new Node(6);
+    let seventeen = new Node(17);
+    let thirtytwo = new Node(32);
+    let twentyfive = new Node(25);
+    let fourty = new Node(40);
+    let seventy = new Node(70);
+
+    twenty.left = twelve;
+    twenty.right = thirtytwo;
+    twelve.left = six;
+    twelve.right = seventeen;
+    thirtytwo.right = fourty;
+    thirtytwo.left = twentyfive;
+    fourty.right = seventy;
+
+    let tree = new BinaryTree(twenty);
+    expect(tree.findMaxValue()).toEqual(70);
+  })
+
+})
+
