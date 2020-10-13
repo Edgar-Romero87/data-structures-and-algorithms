@@ -54,11 +54,11 @@ class Queue{
   }
   enqueue(value){
     let node = new Node(value);
+    this.queue.push(node)
     if (this.front === null){
-      this.front = this.rear
+      this.front = node;
       this.rear = node;
     } else {
-      this.rear.next = node;
       this.rear = node;
     }
   }
@@ -67,7 +67,6 @@ class Queue{
       throw new Error('Nothing to dequeue');
     }
     return this.queue.shift();
-
   }
 
   peek(){

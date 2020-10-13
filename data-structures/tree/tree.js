@@ -46,7 +46,7 @@ class BinaryTree {
         return;
       }
       _inOrder(root.left);
-      output.push(root.vale);
+      output.push(root.value);
 
       _inOrder(root.right);
     }
@@ -82,13 +82,13 @@ class BinaryTree {
     return current.value;
   }
 
-  breadthFirst(tree){
+  breadthFirst(){
     let breadth = new Queue();
     let array = [];
 
-    breadth.enqueue(tree.root);
+    breadth.enqueue(this.root);
 
-    while(breadth.queue.length){
+    while(breadth.peek()){
       let front = breadth.dequeue()
       array.push(front.value)
       if(front.left){
