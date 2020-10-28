@@ -24,4 +24,4 @@ Time O(n) Space O(1) The approach was to create two stacks and treat the values 
 <!-- Description of each method publicly available to your Stack and Queue-->
 enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach. dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
-![whiteboard](queue.png)
+![whiteboard](whiteboard/queueWithStacks.png)
