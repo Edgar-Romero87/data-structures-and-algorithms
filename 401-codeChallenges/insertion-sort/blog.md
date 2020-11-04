@@ -22,7 +22,7 @@ InsertionSort(int[] arr)
 
 A more understandable visualization can be like the follow:
 
-- For this example we will start with an unsorted array, we began with index 0 being our temp variable which we will compare to the rest of the numbers in the array to see if they ar sorted correctly.
+- For this example we will start with an unsorted array, we began with index 0 being our temp variable which we will compare to the rest of the numbers in the array to see if they are sorted correctly.
 
 ![Array](assets/first.png)
 
