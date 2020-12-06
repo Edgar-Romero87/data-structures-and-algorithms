@@ -1,6 +1,6 @@
 'use strict';
 
-const { HashTable } = require('../../data-structures/hashTable/hashtable.js');
+const {HashTable} = require('../../data-structures/hashTable/hashtable.js');
 
 function leftJoin(hashTable1, hashTable2){
 
