@@ -5,7 +5,6 @@ const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues.js');
 
 const output = [];
 
-const output = [];
 class Node {
   constructor(value, left=null, right=null){
     this.value = value;
@@ -84,6 +83,15 @@ class BinaryTree {
     return current.value;
   }
 
+
+  breadthFirst(){
+    let breadth = new Queue();
+    let array = [];
+
+    breadth.enqueue(this.root);
+
+    while(breadth.peek()){
+
   breadthFirst(tree){
     let breadth = new Queue();
     let array = [];
@@ -91,6 +99,7 @@ class BinaryTree {
     breadth.enqueue(tree.root);
 
     while(breadth.queue.length){
+
       let front = breadth.dequeue()
       array.push(front.value)
       if(front.left){
@@ -105,6 +114,7 @@ class BinaryTree {
 
 
 }
+
 
 
 
