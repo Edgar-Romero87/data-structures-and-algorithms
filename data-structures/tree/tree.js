@@ -1,6 +1,10 @@
 'use strict';
 
 
+const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues.js');
+
+const output = [];
+
 const output = [];
 class Node {
   constructor(value, left=null, right=null){
@@ -80,33 +84,29 @@ class BinaryTree {
     return current.value;
   }
 
+  breadthFirst(tree){
+    let breadth = new Queue();
+    let array = [];
+
+    breadth.enqueue(tree.root);
+
+    while(breadth.queue.length){
+      let front = breadth.dequeue()
+      array.push(front.value)
+      if(front.left){
+        breadth.enqueue(front.left)
+      }
+      if(front.right){
+        breadth.enqueue(front.right)
+      }
+    }
+    return array;
+  }
+
+
 }
 
-let twenty = new Node(20);
-let twelve = new Node(12);
-let six = new Node(6);
-let seventeen = new Node(17);
-let thirtytwo = new Node(32);
-let twentyfive = new Node(25);
-let fourty = new Node(40);
-let seventy = new Node(70);
 
-twenty.left = twelve;
-twenty.right = thirtytwo;
-twelve.left = six;
-twelve.right = seventeen;
-thirtytwo.right = fourty;
-thirtytwo.left = twentyfive;
-fourty.right = seventy;
-
-let tree = new BinaryTree(twenty);
-// For a bst ...
-// tree.add(20);
-// tree.add(12);
-
-console.log(tree.preOrder());
-console.log(tree.inOrder());
-console.log(tree.postOrder());
 
 }
 
