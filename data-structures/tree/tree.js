@@ -1,9 +1,11 @@
 'use strict';
 
+
 const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues.js');
 
 const output = [];
 
+const output = [];
 class Node {
   constructor(value, left=null, right=null){
     this.value = value;
@@ -46,7 +48,7 @@ class BinaryTree {
         return;
       }
       _inOrder(root.left);
-      output.push(root.vale);
+      output.push(root.value);
 
       _inOrder(root.right);
     }
@@ -104,6 +106,11 @@ class BinaryTree {
 
 }
 
+
+
+}
+
+// Create a BinarySearchTree class
 
 
 // define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
