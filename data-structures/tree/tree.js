@@ -1,5 +1,6 @@
 'use strict';
 
+
 const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues.js');
 
 const output = [];
@@ -82,6 +83,7 @@ class BinaryTree {
     return current.value;
   }
 
+
   breadthFirst(){
     let breadth = new Queue();
     let array = [];
@@ -89,6 +91,15 @@ class BinaryTree {
     breadth.enqueue(this.root);
 
     while(breadth.peek()){
+
+  breadthFirst(tree){
+    let breadth = new Queue();
+    let array = [];
+
+    breadth.enqueue(tree.root);
+
+    while(breadth.queue.length){
+
       let front = breadth.dequeue()
       array.push(front.value)
       if(front.left){
@@ -104,6 +115,12 @@ class BinaryTree {
 
 }
 
+
+
+
+}
+
+// Create a BinarySearchTree class
 
 
 // define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.

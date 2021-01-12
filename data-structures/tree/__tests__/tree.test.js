@@ -49,6 +49,7 @@ describe('Binary tree tests', () => {
     const tree = new BinarySearchTree(apples);
 
     expect(tree.inOrder()).toEqual(['banana', 'apples', 'pear']);
+
   })
 
   it('Can successfully return a collection from a postOrder traversal', () => {
