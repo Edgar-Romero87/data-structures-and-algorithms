@@ -1,7 +1,7 @@
 'use strict';
 
-const output = [];
 
+const output = [];
 class Node {
   constructor(value, left=null, right=null){
     this.value = value;
@@ -44,7 +44,7 @@ class BinaryTree {
         return;
       }
       _inOrder(root.left);
-      output.push(root.vale);
+      output.push(root.value);
 
       _inOrder(root.right);
     }
@@ -107,6 +107,11 @@ let tree = new BinaryTree(twenty);
 console.log(tree.preOrder());
 console.log(tree.inOrder());
 console.log(tree.postOrder());
+
+}
+
+// Create a BinarySearchTree class
+
 
 // define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 // define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
